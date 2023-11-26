@@ -7,7 +7,7 @@ class Sample
     puts arg1, arg2, arg3, arg4
   end
 
-  # poetry mode
+  # poetry mode - можно опускать скобки для хеша (когда он как аргумент). если хешей несколько - то скобки лучше писать. но можно не писать для второго хеша 
   def poetry(num, h)
     puts num
     puts h.inspect
@@ -15,7 +15,9 @@ class Sample
 end
 
 s = Sample.new
-s.poetry 42, key1: 1, key2: :test, key3: "hi!"
+
+
+# s.poetry 42, key1: 1, key2: :test, key3: "hi!"
 # s.my_method(1, 33)
 # s.new_way(arg1: "hi", arg2: "Hello!")
 
