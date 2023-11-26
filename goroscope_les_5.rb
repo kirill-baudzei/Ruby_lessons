@@ -28,3 +28,4 @@ found = tweets.select do |tweet| # => мы выдаём тот элемент к
 end
 
 puts found.first
+# test
