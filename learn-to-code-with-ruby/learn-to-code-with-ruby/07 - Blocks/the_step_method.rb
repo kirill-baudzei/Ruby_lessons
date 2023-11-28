@@ -5,5 +5,5 @@
 
 1.step(50, 7) do |number|
     puts "Alright, let's go up by 7!"
-    puts "I'm now on #{number}"
+    puts "I'm now on #{number}" # добавляет от 1 до 50 по 7...
   end
