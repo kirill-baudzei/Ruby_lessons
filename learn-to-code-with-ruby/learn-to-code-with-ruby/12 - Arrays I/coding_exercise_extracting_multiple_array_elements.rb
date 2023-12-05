@@ -12,15 +12,14 @@
 # split_in_two(["A", "B", "C"])           => [["A", "B"], ["C"]]
 # split_in_two(["A", "B", "C", "D", "E"]) => [["A", "B", "C"], ["D", "E"]]
 
-def split_in_two array
+def split_in_two(array)
   elements_count = array.length
+  half = elements_count / 2 # узнаем индекс среднего
   if elements_count.even? # если четное то делятся поровну
-    half = elements_count / 2 # узнаем индекс среднего
     first_part = array.slice(0...half) # ... - не включительно верхнее. Выводит массив тк метод slice
     second_part = array.slice(half..-1) # включительно верхнее, то есть -1 индекс. выводит массив тк метод values at
     result = [first_part, second_part] 
   elsif elements_count.odd? # если нечетное то в первом массиве должно быть больше
-    half = elements_count / 2 # узнаем индекс среднего
     first_part = array.slice(0..half)
     second_part = array.slice((half+1)..-1)
     result = [first_part, second_part]
@@ -39,29 +38,26 @@ p split_in_two(["A", "B", "C", "D", "E"])
 # ... (три точки) исключает последний элемент.
 
 
-# мой более длинный код с проверкой на 2 элемента в исходном массиве
+# более читаемый код, где убраны переменные и используется срез массива напрямую в возвращаемом массиве.
+def split_in_two(array)
+  elements_count = array.length
+  half = elements_count / 2
+  
+  if elements_count.even?
+    [array[0...half], array[half..-1]]
+  elsif elements_count.odd?
+    [array[0..half], array[(half + 1)..-1]]
+  end
+end
 
-# def split_in_two array
-#   elements_count = array.length
-#   if elements_count == 2
-#     first_part = array.values_at(0) # первый индекс
-#     second_part = array.values_at(-1) # последний
-#     result = [first_part, second_part] # массив из двух массивов
-#   elsif elements_count.even? # если четное то делятся поровну
-#     half = elements_count / 2 # узнаем индекс среднего
-#     first_part = array.slice(0...half) # ... - не включительно верхнее. Выводит массив тк метод slice
-#     second_part = array.slice(half..-1) # включительно верхнее, то есть -1 индекс. выводит массив тк метод values at
-#     result = [first_part, second_part] 
-#   elsif elements_count.odd? # если нечетное то в первом массиве должно быть больше
-#     first_part = array.slice(0...-1)
-#     second_part = array.slice(-1, 1)
-#     result = [first_part, second_part]
-#     result
-#   end
-# end
-
-# p split_in_two(["A", "B"])
-# p split_in_two(["A", "B", "C", "D"]) 
-# p split_in_two(["A", "B", "C", "D", "E", "F"]) 
-# p split_in_two(["A", "B", "C"])         
-# p split_in_two(["A", "B", "C", "D", "E"])
+# ANOTHER METHOD
+# метод препода. Более красивый
+def split_in_two(values)
+  number_of_elements = values.length          # 5
+  midpoint = (number_of_elements / 2.0).ceil  # = 3. 
+  # метод ceil округляет в большую сторону. 2.5.ceil = 3. Если 2.0.ceil = 2. Если уже целое, то ничего не делает
+  [
+    values.first(midpoint),
+    values.last(number_of_elements - midpoint)
+  ]
+end
