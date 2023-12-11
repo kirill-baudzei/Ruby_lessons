@@ -7,4 +7,4 @@ puts [].length == 0 # true
 puts
 
 puts [].nil? # false
-puts nil.nil? # true
+puts nil.nil? # tr
