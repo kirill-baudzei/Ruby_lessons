@@ -13,7 +13,7 @@ debugger # альтернатива binding.break
 beverage = "Arizona Aced Tea"
 puts "I like drinking #{beverage}"
 
-debugger # свои комманды в терминале у дебагера. проверяет переменные и тд. continue - перемещение по линиям
+debugger # свои комманды в терминале у дебагера. проверяет переменные и тд. continue - перемещение по линиям , где написано debugger. 
 # альтернатива binding.break
 
 puts "This is the end of the programm"

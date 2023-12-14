@@ -1,0 +1,1 @@
+# метод count для string
