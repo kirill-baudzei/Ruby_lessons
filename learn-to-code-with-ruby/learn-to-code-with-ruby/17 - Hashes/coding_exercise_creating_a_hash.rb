@@ -24,3 +24,10 @@ end
 p hash_from_arrays(["red", "green", "blue"], [1, 2, 3]) #  => {"red"=>1, "green"=>2, "blue"=>3}
 p hash_from_arrays([:hello, :happy], [:goodbye, :sad])  #  => {:hello=>:goodbye, :happy=>:sad}
 p hash_from_arrays([], [])                              #  => {}
+
+# решение препода
+def hash_from_arrays(keys, values)
+  result = {}
+  keys.each_with_index { |key, index| result[key] = values[index] }
+  result
+end
