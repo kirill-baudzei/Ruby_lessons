@@ -37,7 +37,7 @@ my_hash = { "one" => 1, "two" => 2, "three" => 3 }
 # Получение значения по ключу
 puts my_hash.fetch("one")  # Вывод: 1
 
-# Если ключ не существует, будет выброшено исключение KeyError
+# Если ключ не существует, будет выводится исключение KeyError
 # puts my_hash.fetch("four") # Вывод: KeyError: key not found: "four"
 
 # Указание значения по умолчанию

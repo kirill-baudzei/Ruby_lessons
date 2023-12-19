@@ -17,6 +17,7 @@ def custom_join(words, delimiter)
   words.each_with_index do |word, i|
     result += word
     result += delimiter unless i == words.length - 1
+    # либо можно так -  result << delimiter if index != words.length - 1
   end
   result
 end
