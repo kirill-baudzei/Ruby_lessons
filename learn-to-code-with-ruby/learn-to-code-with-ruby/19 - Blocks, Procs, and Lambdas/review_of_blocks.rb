@@ -11,6 +11,7 @@
 # A block is used only once, then disappears.
 # Methods capture the repeatable steps of a procedure.
 # A block captures the custom step of a procedure.
+
 # Нужно понимать разницу, когда использовать блок кода, а когда писать свой метод
 
 [1, 2, 3].each { |value| p value }
