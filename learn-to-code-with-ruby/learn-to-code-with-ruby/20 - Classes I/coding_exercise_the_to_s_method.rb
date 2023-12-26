@@ -20,4 +20,4 @@ class Computer
 end
 
 my_comp = Computer.new
-p my_comp.to_s
+puts my_comp
