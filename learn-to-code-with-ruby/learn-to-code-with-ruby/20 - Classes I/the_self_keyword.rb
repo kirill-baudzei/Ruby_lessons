@@ -60,9 +60,6 @@ obj.instance_method
 # Output: Inside class_method for MyClass
 # Использование self зависит от контекста, и его правильное использование обеспечивает четкость и понимание кода.
 
-
-
-
 class Computer
 
   puts "Inside Guitar class: #{self}" # Inside Guitar class: Computer
