@@ -16,3 +16,30 @@
 # Не могут быть вызваны извне объекта, кроме случаев, когда объекты принадлежат одному классу или его подклассу.
 # Методы, объявленные после protected, считаются защищенными.
 
+class Car
+
+  def initialize(age, miles)
+    base_value = 20_000
+    age_deduction = age * 1000
+    miles_deduction = miles / 10
+    @value = base_value - age_deduction - miles_deduction
+  end
+
+  def compare_car_with(car)
+    self.value > car.value ? "Your car is better" : "Your car is worse"
+  end
+  
+  protected # метод ниже работает для методов и экземпляров класса
+
+  def value
+    @value
+  end
+end
+
+civic = Car.new(5, 60_000)
+fiat = Car.new(3, 100_000)
+doge = Car.new(3, 40_000)
+
+puts civic.compare_car_with(fiat)
+puts civic.compare_car_with(doge)
+# puts civic.value - в этом случае метод не работает

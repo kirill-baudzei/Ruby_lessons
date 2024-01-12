@@ -62,7 +62,7 @@ p guitar.price
 guitar.price=(5000)
 p guitar.price
   
-guitar.price = 10000
+guitar.price = 10000 # более простой синтакс
 p guitar.price
   
-# guitar.wood = "Mahogany"
+# guitar.wood = "Mahogany" - выдаст ошибку, тк переменная wood не переписываемая
