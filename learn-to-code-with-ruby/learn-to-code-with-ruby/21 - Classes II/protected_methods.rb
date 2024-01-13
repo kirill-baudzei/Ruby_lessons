@@ -40,6 +40,6 @@ civic = Car.new(5, 60_000)
 fiat = Car.new(3, 100_000)
 doge = Car.new(3, 40_000)
 
-puts civic.compare_car_with(fiat)
-puts civic.compare_car_with(doge)
+puts civic.compare_car_with(fiat) # Your car is better
+puts civic.compare_car_with(doge) # Your car is worse
 # puts civic.value - в этом случае метод не работает
