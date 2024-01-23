@@ -1,22 +1,57 @@
-# duck typing 
+# Duck typing в Ruby - это философия типизации, при которой подход к объекту определяется наличием определенных методов, 
+# а не его явным типом или классом. 
+# Если объект ведет себя как утка (выполняет нужные методы), то его можно считать "уткой", независимо от его явного класса или типа.
 
-class Icecream
-  attr_reader :flavor, :calories, :price
-  
-  def initialize(flavor:, calories:, price:)
-    @flavor = flavor
-    @calories = calories
-    @price = price
+# Принцип duck typing основан на следующей идее: 
+# "Если это выглядит как утка, плавает как утка, и крякает как утка, то, вероятно, это и есть утка."
+
+# Пример duck typing в Ruby:
+
+class Duck
+  def quack
+    "Quack!"
   end
-  
-  def ==(other)
-    calories == other.calories && price == other.price
+
+  def swim
+    "Swimming"
   end
 end
-  
-cookies_and_cream = Icecream.new(flavor: "cookie and Cream", calories: 653, price: "6.5 $")
-vanile = Icecream.new(flavor: "Vanile taste", calories: 450, price: "5 $")
-mango = Icecream.new(flavor: "Mango taste", calories: 450, price: "5 $")
-  
-p cookies_and_cream == vanile
-p cookies_and_cream == cookies_and_cream 
+
+class RobotDuck
+  def quack
+    "Beep beep!"
+  end
+
+  def swim
+    "Robot duck swimming"
+  end
+end
+
+def make_duck_quack_and_swim(duck)
+  puts duck.quack
+  puts duck.swim
+end
+
+real_duck = Duck.new
+robot_duck = RobotDuck.new
+
+make_duck_quack_and_swim(real_duck)
+# Quack!
+# Swimming
+make_duck_quack_and_swim(robot_duck)
+# Beep beep!
+# Robot duck swimming
+# В данном примере как настоящая утка (Duck), так и робот-утка (RobotDuck) могут использоваться в методе make_duck_quack_and_swim, 
+# потому что у обоих объектов есть методы quack и swim. 
+# Duck typing в Ruby делает код более гибким и способствует повышению его читаемости и поддерживаемости.
+
+# Принципы duck typing в Ruby:
+
+# Проверка методов, а не типов: Вместо проверки явного типа объекта, код ожидает наличие определенных методов. 
+# Если объект поддерживает эти методы, он считается подходящим.
+
+# Гибкость и расширяемость: Duck typing позволяет передавать любые объекты, которые обладают необходимым поведением, 
+# даже если они не являются членами одной иерархии классов.
+
+# Принцип "не заботься о типе, заботься о способностях": Вместо того чтобы фокусироваться на типах данных, программист работает 
+# с методами и свойствами объектов, что делает код более абстрактным и универсальным.
