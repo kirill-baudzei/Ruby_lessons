@@ -29,4 +29,4 @@ p Manager.ancestors # [Manager, Employee, Object, Kernel, BasicObject]
 puts 
 
 puts Manager < Employee # true - проверяет, является ли Manager сабклассом Employee
-puts Employee < Worker
+puts Employee < Worker # false
