@@ -36,4 +36,4 @@ puts bob.instance_of?(Worker) # false
 
 puts bob.is_a?(Employee) # true
 puts bob.is_a?(Worker) # false Worker ниже в иерархии - false. все что выше - true
-puts bob.is_a?(Manager)
+puts bob.is_a?(Manager) # true

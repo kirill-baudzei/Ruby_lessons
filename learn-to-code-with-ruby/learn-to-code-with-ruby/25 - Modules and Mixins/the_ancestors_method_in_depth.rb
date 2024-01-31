@@ -25,4 +25,5 @@ puts bookstore.purchase("Animal Farm")
 puts supermarket.purchase("Ice Cream")
 puts bodega.purchase("Slim Jim")
 
-p Bookstore.ancestors
+p Bookstore.ancestors # [Bookstore, Purchaseable, Object, Kernel, BasicObject]
+

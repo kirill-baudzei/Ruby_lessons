@@ -27,7 +27,7 @@ senator = Candidate.new(
   birthplace: "Kentucky"
 )
   
-p senator.hobby
-p senator.birthplace
-p senator.name
-p senator.occupation
+p senator.hobby # "Fishing"
+p senator.birthplace # "Kentucky"
+p senator.name # "Mr. Smith"
+p senator.occupation # "Candidate"

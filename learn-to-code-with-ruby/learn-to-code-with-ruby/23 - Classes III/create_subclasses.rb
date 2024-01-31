@@ -18,7 +18,7 @@ end
 empl1 = Employee.new("Kirill", 21)
 p empl1.introduce # "Hi! My name is Kirill and I am 21 years old"
 
-class Manager < Employee # наследование всего из супер метода
+class Manager < Employee # наследование всего из супер класса
 end
 
 class Worker < Employee
